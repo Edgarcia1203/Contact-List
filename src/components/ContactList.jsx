@@ -1,4 +1,3 @@
-import React from "react"; 
 const dummyContacts = [
     { id: 1, name: "R2-D2", phone: "222-222-2222", email: "r2d2@droids.com" },
     { id: 2, name: "C-3PO", phone: "333-333-3333", email: "c3po@droids.com" },
@@ -23,9 +22,13 @@ export default function ContactList() {
               <td>Email</td>
               <td>Phone</td>
             </tr>
-            {
-               // Map over data here
-             }
+            {contacts.map((contact) => (
+              <tr key={contact.id}>
+                <td>{contact.name}</td>
+                <td>{contact.email}</td>
+                <td>{contact.phone}</td>
+                </tr>
+             ))}
           </tbody>
         </table>
     ); 
